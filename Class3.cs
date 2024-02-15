@@ -120,7 +120,8 @@ namespace ConsoleApp1
                 Console.WriteLine("Paildrome Not");
             }
         }
-        void Q7() {
+        void Q7()
+        {
             try
             {
                 Console.WriteLine("Enter a number");
@@ -135,7 +136,7 @@ namespace ConsoleApp1
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Invalid input"+ex);
+                Console.WriteLine("Invalid input" + ex);
             }
         }
         void Q8()
@@ -149,12 +150,12 @@ namespace ConsoleApp1
                 double num2 = double.Parse(Console.ReadLine());
 
                 double result = num1 / num2;
-                Console.WriteLine("Result is"+result);
+                Console.WriteLine("Result is" + result);
 
 
 
             }
-            catch(FormatException)
+            catch (FormatException)
             {
                 Console.WriteLine("Invalid input");
             }
@@ -168,7 +169,8 @@ namespace ConsoleApp1
             Console.WriteLine("Enter three letters");
             string strr = Console.ReadLine();
 
-            if (strr.Length == 3) {
+            if (strr.Length == 3)
+            {
 
                 char letter1 = strr[0];
                 char letter2 = strr[1];
@@ -183,7 +185,124 @@ namespace ConsoleApp1
         }
 
 
-        static void Main(string[] args)
+        /*
+        void Q10()
+        {
+            Console.WriteLine("Enter  a chracter:");
+            char a = Console.ReadKey().KeyChar;
+            Console.WriteLine();
+
+            if (char.IsDigit(a))
+            {
+                Console.WriteLine("the chracter is digit");
+            }
+            else if (char.IsLetter(a))
+            {
+                Console.WriteLine("the chracter is letter");
+            }
+            else if (Isvowel(a))
+            {
+                Console.WriteLine("the character is vowel");
+            }
+            else
+            {
+                Console.WriteLine("The chracter is symbol");
+            }
+
+
+
+
+        }
+        static bool Isvowel(char ch)
+        {
+            ch = char.ToLower(ch);
+            return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
+        }
+
+
+
+
+    }
+        */
+
+        void Q11()
+        {
+            Console.WriteLine("Enter a height");
+            double height = double.Parse(Console.ReadLine());
+
+            string cat;
+
+            if (height < 150)
+            {
+                cat = "short";
+
+            }
+            else if (height >= 150 && height < 170)
+            {
+                cat = "Avrage";
+
+            }
+            else if (height >= 170 && height < 200)
+            {
+                cat = "tall";
+            }
+            else
+            {
+                cat = "very tall";
+            }
+
+            Console.WriteLine($"Your height catgeory is {cat}");
+        }
+        void Q12()
+        {
+                Console.WriteLine("Enter Student Details:");
+
+                Console.Write("Roll Number: ");
+                int rollNo = int.Parse(Console.ReadLine());
+
+                Console.Write("Name: ");
+                string name = Console.ReadLine();
+
+                Console.Write("Marks in Subject 1: ");
+                int subject1Marks = int.Parse(Console.ReadLine());
+
+                Console.Write("Marks in Subject 2: ");
+                int subject2Marks = int.Parse(Console.ReadLine());
+
+                Console.Write("Marks in Subject 3: ");
+                int subject3Marks = int.Parse(Console.ReadLine());
+
+                int totalMarks = subject1Marks + subject2Marks + subject3Marks;
+                double percentage = (totalMarks / 300.0) * 100;
+
+                string division;
+
+                if (percentage >= 60)
+                {
+                    division = "First Division";
+                }
+                else if (percentage >= 45)
+                {
+                    division = "Second Division";
+                }
+                else if (percentage >= 33)
+                {
+                    division = "Third Division";
+                }
+                else
+                {
+                    division = "Fail";
+                }
+
+                Console.WriteLine("\nStudent Report:");
+                Console.WriteLine($"Roll Number: {rollNo}");
+                Console.WriteLine($"Name: {name}");
+                Console.WriteLine($"Total Marks: {totalMarks}");
+                Console.WriteLine($"Percentage: {percentage:F2}%");
+                Console.WriteLine($"Division: {division}");   
+
+    }
+    static void Main(string[] args)
         {
             Class3 n = new Class3();
             //n.Q1();
@@ -194,9 +313,11 @@ namespace ConsoleApp1
             //n.Q6();
             //n.Q7();
             //n.Q8();
-            n.Q9();
-
-            Console.ReadKey();
+            //n.Q9();
+            //n.Q10();
+            //n.Q11();
+            n.Q12();
         }
+
     }
 }
